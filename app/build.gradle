@@ -1,0 +1,33 @@
+
+plugins {
+    id 'application'
+    id 'com.google.protobuf' version '0.8.15'
+    id 'idea'
+}
+
+repositories {
+    // Use Maven Central for resolving dependencies.
+    mavenCentral()
+    // maven("https://plugins.gradle.org/m2/")
+}
+
+dependencies {
+    implementation 'com.google.protobuf:protobuf-java:3.15.3'
+}
+
+tasks.test {
+    // Use junit platform for unit tests.
+    useJUnitPlatform()
+}
+
+protobuf {
+    protoc {
+        artifact = "com.google.protobuf:protoc:3.12.0"
+    }
+}
+
+application {
+    mainClass = 'temp.demo.App'
+}
+
+
