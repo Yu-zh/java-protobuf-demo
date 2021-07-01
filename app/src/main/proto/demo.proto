@@ -3,12 +3,14 @@ syntax = "proto3";
 option java_package = "temp.demo";
 option java_multiple_files = true;
 
-message Msg {
-    string foo = 1;
-    SecondMsg blah = 2;
+message withBytes {
+    string str = 1;
+    bytes bts = 2;
+    int32 num = 3;
 }
 
-message SecondMsg {
-    int32 blah = 1;
+message withoutBytes {
+    string str = 1;
+    int32 num = 2;
 }
 
